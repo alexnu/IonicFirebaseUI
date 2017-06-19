@@ -78,13 +78,12 @@
         <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
     </platform>
     <universal-links>
-        <host name="dvt2k.app.goo.gl" scheme="https" />
-        <host name="fluator.firebaseapp.com" scheme="https">
+        <host name="w2nsc.app.goo.gl" scheme="https" />
+        <host name="ionicfirebaseui.firebaseapp.com" scheme="https">
             <path url="/__/auth/callback" />
         </host>
     </universal-links>
     <engine name="android" spec="^6.2.3" />
-    <engine name="browser" spec="^4.1.0" />
     <plugin name="cordova-plugin-browsertab" spec="^0.2.0" />
     <plugin name="cordova-plugin-buildinfo" spec="^1.1.0" />
     <plugin name="cordova-plugin-console" spec="^1.0.5" />
