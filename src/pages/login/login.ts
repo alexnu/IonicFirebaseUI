@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { FirebaseuiProvider } from '../../providers/firebaseui/firebaseui';
 import * as firebase from 'firebase';
 import * as firebaseui from 'firebaseui';
 
@@ -9,11 +10,13 @@ import * as firebaseui from 'firebaseui';
 })
 export class LoginPage {
 
-  private ui: any;
+  constructor(public navCtrl: NavController, public uiProvider: FirebaseuiProvider) {
+  }
 
-  constructor(public navCtrl: NavController) {
-    // Initialize the FirebaseUI Widget using Firebase.
-    this.ui = new firebaseui.auth.AuthUI(firebase.auth());
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad LoginPage')
+    // The start method will wait until the DOM is loaded.
+    this.uiProvider.ui.start('#firebaseui-auth-container', this.getUiConfig());
   }
 
   getUiConfig() {
@@ -33,20 +36,14 @@ export class LoginPage {
       // Leave the lines as is for the providers you want to offer your users.
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
       firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-      // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-      // firebase.auth.GithubAuthProvider.PROVIDER_ID,
+      firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+      firebase.auth.GithubAuthProvider.PROVIDER_ID,
       firebase.auth.EmailAuthProvider.PROVIDER_ID,
-      // firebase.auth.PhoneAuthProvider.PROVIDER_ID
+      // firebase.auth.PhoneAuthProvider.PROVIDER_ID // not available for Ionic apps
       ],
       // Terms of service url.
       tosUrl: '<your-tos-url>'
     };
-  }
-
-  ionViewDidEnter() {
-    console.log('ionViewDidEnter LoginPage')
-    // The start method will wait until the DOM is loaded.
-    this.ui.start('#firebaseui-auth-container', this.getUiConfig());
   }
 
 }

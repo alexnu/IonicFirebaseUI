@@ -23,7 +23,7 @@ export class HomePage {
   }
 
   logout() {
-    firebase.auth().signOut().then(() => this.navCtrl.pop());
+    firebase.auth().signOut();
   }
 
 }
