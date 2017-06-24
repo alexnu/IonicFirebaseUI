@@ -34,7 +34,14 @@ export class LoginPage {
       credentialHelper: firebaseui.auth.CredentialHelper.NONE,
       signInOptions: [
       // Leave the lines as is for the providers you want to offer your users.
-      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      { 
+        provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID, 
+        customParameters: { 
+          // Forces account selection even when one account 
+          // is available. 
+          prompt: 'select_account' 
+        } 
+      },
       firebase.auth.FacebookAuthProvider.PROVIDER_ID,
       firebase.auth.TwitterAuthProvider.PROVIDER_ID,
       firebase.auth.GithubAuthProvider.PROVIDER_ID,
