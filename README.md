@@ -22,7 +22,7 @@ provider you want to use in their own developer app settings. Please read the
 - [Twitter](https://firebase.google.com/docs/auth/web/twitter-login#before_you_begin)
 - [Github](https://firebase.google.com/docs/auth/web/github-auth#before_you_begin)
 
-### Notes
+### Note
 Phone number is currently not supported for Ionic/Cordova environments.
 
 ## Run app locally:
@@ -61,7 +61,7 @@ module.exports = {
 }
 ```
 
-and add the following lines to your package.json:
+- And add the following lines to your package.json:
 
 ```json
 "config": {
@@ -86,3 +86,26 @@ By adding the following line to config.xml:
 This is needed for Google Provider because sometimes after authentication 
 a new instance of the app is created resulting in never successfully
 authenticated. The issue does not occur on iOS devices.
+
+### Create FirebaseUIProvider
+
+There should only be a single instance of firebaseui for the whole app,
+so it is a good idea to create a provider and save the instance there:
+
+```javascript
+@Injectable()
+export class FirebaseuiProvider {
+
+  ui: any;
+
+  constructor() {
+    // Initialize the FirebaseUI Widget using Firebase.
+    this.ui = new firebaseui.auth.AuthUI(firebase.auth());
+  }
+
+}
+```
+
+### Add FirebaseUI to any page you like
+
+See example at `src/pages/login/login.ts`.
