@@ -85,7 +85,7 @@ By adding the following line to config.xml:
 
 This is needed for Google Provider because sometimes after authentication 
 a new instance of the app is created resulting in never successfully
-authenticated. The issue does not occur on iOS devices.
+authenticating. The issue does not occur on iOS devices.
 
 ### Create FirebaseUIProvider
 
