@@ -1,6 +1,6 @@
 # FirebaseUI for web - Ionic demo
 
-This is a demo [Ionic](http://ionicframework.com/docs/) project using FirebaseUI-web.
+This is a demo [Ionic](http://ionicframework.com/docs/) project using [FirebaseUI-web](https://github.com/firebase/firebaseui-web).
 
 ## Firebase console configuration:
 
