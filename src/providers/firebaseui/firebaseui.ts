@@ -12,7 +12,7 @@ import * as firebaseui from 'firebaseui';
 @Injectable()
 export class FirebaseuiProvider {
 
-  ui: any;
+  ui: firebaseui.auth.AuthUI;
 
   constructor() {
     console.log('Hello FirebaseuiProvider Provider');

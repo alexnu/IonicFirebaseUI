@@ -27,7 +27,6 @@ export class LoginPage {
           // Do something.
           // Return type determines whether we continue the redirect automatically
           // or whether we leave that to developer to handle.
-          this.navCtrl.push('HomePage');
           return false;
         }
       },
