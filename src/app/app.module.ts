@@ -5,12 +5,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
+import { HomePage } from '../pages/home/home';
+import { AuthProvider } from '../providers/auth/auth';
 import { LoginPage } from '../pages/login/login';
-import { FirebaseuiProvider } from '../providers/firebaseui/firebaseui';
 
 @NgModule({
   declarations: [
     MyApp,
+    HomePage,
     LoginPage
   ],
   imports: [
@@ -20,13 +22,14 @@ import { FirebaseuiProvider } from '../providers/firebaseui/firebaseui';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    HomePage,
     LoginPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    FirebaseuiProvider
+    AuthProvider
   ]
 })
 export class AppModule {}
