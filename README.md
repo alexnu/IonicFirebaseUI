@@ -2,6 +2,8 @@
 
 This is a demo [Ionic](http://ionicframework.com/docs/) project using [FirebaseUI-web](https://github.com/firebase/firebaseui-web).
 
+[Live demo](https://ionicfirebaseui.firebaseapp.com/)
+
 ## Firebase console configuration:
 
 To properly configure your Firebase Project please follow all the
@@ -33,7 +35,7 @@ $ ionic serve
 ```
 
 ### Note
-`ionic lab` or `ionic serve --lab` does not work with FirebaseUI, you will
+`ionic lab` or `ionic serve --lab` does not work with Google provider, you will
 have to use `ionic serve` instead.
 
 ## Add FirebaseUI to your own Ionic project:
